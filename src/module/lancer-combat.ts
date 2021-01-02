@@ -5,7 +5,7 @@ export class LancerCombat extends Combat {
 
     // Populate activation data
     c.flags.activations = c.flags.activations ?? {};
-    c.flags.activations.max = c.flags.activations.max ?? c.actor?.data.data?.activations ?? 1;
+    c.flags.activations.max = c.flags.activations.max ?? c.actor?.data.data?.activations ?? 5;
     c.flags.activations.value = c.flags.activations.value ?? 0;
 
     c.flags.dummy = c.flags.dummy ?? false;
@@ -47,7 +47,7 @@ export class LancerCombat extends Combat {
     let updates = this.combatants.map(c => {
       return {
         _id: c._id,
-        "flags.activations.value": c.defeated ? 0 : c.flags.activations.max,
+        "flags.activations.value": c.defeated ? 0 : c.flags.activations.value + 1,
         "flags.activations.max": c.flags.activations.max,
       };
     });
