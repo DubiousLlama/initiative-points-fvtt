@@ -20,5 +20,5 @@
   "LANCERINITIATIVE.EnableInitiativeDesc": "Adds a button to owned combatants for rolling initiative",
   "LANCERINITIATIVE.AddActivation": "Add Activation",
   "LANCERINITIATIVE.RemoveActivation": "Remove Activation",
-  "LANCERINITIATIVE.UndoActivation": "Undo Activation"
+  "LANCERINITIATIVE.UndoActivation": "Add Point"
 }
