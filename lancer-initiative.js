@@ -49,6 +49,22 @@ function registerSettings() {
         type: Boolean,
         default: false,
     });
+    game.settings.register(CONFIG.LancerInitiative.module, "max", {
+        name: game.i18n.localize("LANCERINITIATIVE.Maximum"),
+        hint: game.i18n.localize("LANCERINITIATIVE.MaximumDesc"),
+        scope: "world",
+        config: true,
+        type: Number,
+        default: 1,
+    });
+    game.settings.register(CONFIG.LancerInitiative.module, "refresh", {
+        name: game.i18n.localize("LANCERINITIATIVE.Refresh"),
+        hint: game.i18n.localize("LANCERINITIATIVE.RefreshDesc"),
+        scope: "world",
+        config: true,
+        type: Number,
+        default: 1,
+    });
     game.settings.register(CONFIG.LancerInitiative.module, "enable-initiative", {
         name: game.i18n.localize("LANCERINITIATIVE.EnableInitiative"),
         hint: game.i18n.localize("LANCERINITIATIVE.EnableInitiativeDesc"),

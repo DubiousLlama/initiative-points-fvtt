@@ -20,5 +20,9 @@
   "LANCERINITIATIVE.EnableInitiativeDesc": "Adds a button to owned combatants for rolling initiative",
   "LANCERINITIATIVE.AddActivation": "Add Activation",
   "LANCERINITIATIVE.RemoveActivation": "Remove Activation",
-  "LANCERINITIATIVE.UndoActivation": "Add Point"
+  "LANCERINITIATIVE.UndoActivation": "Add Point",
+  "LANCERINITIATIVE.Refresh": "Initiatve Refresh Rate",
+  "LANCERINITIATIVE.RefreshDesc": "Amount of initiative activations granted to a combatant per round",
+  "LANCERINITIATIVE.Maximum": "Maximum Initiative Activations",
+  "LANCERINITIATIVE.MaximumDesc": "Maximum number of initiative activations a charachter can have at one time. After this amount, the combatant stops gaining further activations at the start of their turn."
 }

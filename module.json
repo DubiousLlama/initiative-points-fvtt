@@ -1,8 +1,8 @@
 {
-    "name": "lancer-initiative",
-    "title": "Lancer Initiative",
-    "description": "Implements Lancer's popcorn style initiative in Foundry VTT",
-    "author": "Bolts",
+    "name": "initiative-points-fvtt",
+    "title": "Initiative Points",
+    "description": "Implements Ashen Lands's initative points system in Foundry VTT. Reccomended to be used with Player Activation (https://github.com/DubiousLlama/li-player-activation).",
+    "author": "Bolts and MostlyHarmless",
     "type": "module",
     "version": "0.5.0-dev",
     "minimumCoreVersion": "0.7.0",
@@ -18,16 +18,6 @@
             "lang": "en",
             "name": "English",
             "path": "lang/en.json"
-        },
-        {
-            "lang": "es",
-            "name": "Español",
-            "path": "lang/es.json"
-        },
-        {
-            "lang": "pt-BR",
-            "name": "Português",
-            "path": "lang/pt-BR.json"
         }
     ],
     

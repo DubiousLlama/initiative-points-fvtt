@@ -1,13 +1,17 @@
 export class LancerCombat extends Combat {
     /** @override */
     _prepareCombatant(c, scene, players, settings = {}) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         c = super._prepareCombatant(c, scene, players, settings);
+        // Get initiative settings
+        var initiativeMax = game.settings.get(CONFIG.LancerInitiative.module, "max");
+        var initiativeRefresh = game.settings.get(CONFIG.LancerInitiative.module, "refresh");
         // Populate activation data
         c.flags.activations = (_a = c.flags.activations) !== null && _a !== void 0 ? _a : {};
-        c.flags.activations.max = (_e = (_b = c.flags.activations.max) !== null && _b !== void 0 ? _b : (_d = (_c = c.actor) === null || _c === void 0 ? void 0 : _c.data.data) === null || _d === void 0 ? void 0 : _d.activations) !== null && _e !== void 0 ? _e : 5;
+        c.flags.activations.max = (_e = (_b = c.flags.activations.max) !== null && _b !== void 0 ? _b : (_d = (_c = c.actor) === null || _c === void 0 ? void 0 : _c.data.data) === null || _d === void 0 ? void 0 : _d.activations) !== null && _e !== void 0 ? _e : initiativeMax;
         c.flags.activations.value = (_f = c.flags.activations.value) !== null && _f !== void 0 ? _f : 0;
         c.flags.dummy = (_g = c.flags.dummy) !== null && _g !== void 0 ? _g : false;
+        c.flags.activations.refresh = (_h = c.flags.activations.refresh) !== null && _h !== void 0 ? _h : initiativeRefresh;
         // Set an arbitrary initiative so that attempting to roll doesn't raise an
         // exception for the dummy.
         if (c.flags.dummy) {
@@ -44,9 +48,14 @@ export class LancerCombat extends Combat {
      */
     async resetActivations() {
         let updates = this.combatants.map(c => {
+            if (c.flags.activations.value + c.flags.activations.refresh < c.flags.activations.max) {
+                var new_value = c.flags.activations.value + c.flags.activations.refresh;
+            } else {
+                var new_value = c.flags.activations.max;
+            };
             return {
                 _id: c._id,
-                "flags.activations.value": c.defeated ? 0 : c.flags.activations.value + 1,
+                "flags.activations.value": c.defeated ? 0 : new_value,
                 "flags.activations.max": c.flags.activations.max,
             };
         });
