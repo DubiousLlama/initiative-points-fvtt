@@ -1,3 +1,3 @@
 # initiative-points-fvtt
 
-Fork of BoltsJ's Lancer initative that allows for configurable initative activation refesh and maximum.
+Fork of BoltsJ's Lancer initiative that allows for configurable initiative activation refresh and maximum.
