@@ -22,6 +22,6 @@
     ],
     
     "url": "https://github.com/DubiousLlama/initiative-points-fvtt",
-    "manifest": "https://raw.githubusercontent.com/DubiousLlama/initiative-points-fvtt/default/src/module.json",
+    "manifest": "https://raw.githubusercontent.com/DubiousLlama/initiative-points-fvtt/default/module.json",
     "download": "https://github.com/DubiousLlama/initiative-points-fvtt/archive/testing-downloads.zip"
 }
